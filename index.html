@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中秋节快乐</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            color: #d4af37;
+        }
+        .moon {
+            font-size: 100px;
+        }
+        #message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        input, button {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>中秋节</h1>
+    <div class="moon">🌕</div>
+    <div>
+        <input type="date" id="dateInput">
+        <button onclick="checkDate()">确认</button>
+    </div>
+    <div id="message"></div>
+
+    <script>
+        function checkDate() {
+            const inputDate = new Date(document.getElementById('dateInput').value);
+            const midAutumnDate = new Date(2024, 8, 17); // 2024年中秋节是9月17日
+
+            // 比较年、月、日是否相等
+            if (inputDate.getFullYear() === midAutumnDate.getFullYear() &&
+                inputDate.getMonth() === midAutumnDate.getMonth() &&
+                inputDate.getDate() === midAutumnDate.getDate()) {
+                document.getElementById('message').innerHTML = '中秋节快乐!<br>祝您和家人团圆美满,幸福安康!';
+            } else {
+                document.getElementById('message').innerHTML = '这不是2024年的中秋节日期。2024年中秋节在9月17日。';
+            }
+        }
+    </script>
+</body>
+</html>
